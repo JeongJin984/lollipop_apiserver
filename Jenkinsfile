@@ -4,7 +4,7 @@ node {
     }
 
     stage("Build image") {
-        sh "gradle bootBuildImage --imageName=jeongjin984/lollipop_apiserver"
+        sh "./gradlew bootBuildImage --imageName=jeongjin984/lollipop_apiserver"
     }
 
     stage("Docker login") {
