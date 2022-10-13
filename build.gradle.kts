@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:2.7.3")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("dev.miku:r2dbc-mysql:0.8.2.RELEASE")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -26,6 +26,7 @@ dependencies {
     implementation ("org.springframework.boot:spring-boot-starter-data-redis-reactive")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    implementation("io.projectreactor.kafka:reactor-kafka")
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-rsocket
     implementation("org.springframework.boot:spring-boot-starter-rsocket:2.7.4")
@@ -33,7 +34,7 @@ dependencies {
 
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.4")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.3")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("io.r2dbc:r2dbc-h2:0.9.1.RELEASE")
 

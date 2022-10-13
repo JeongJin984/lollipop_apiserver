@@ -1,5 +1,6 @@
 package com.lollipop.apiserver.api.service
 
+import com.lollipop.apiserver.api.service.mapper.EmployeesMapper
 import com.lollipop.apiserver.db.mySql.entity.Employees
 import com.lollipop.apiserver.db.mySql.repository.EmployeesRepository
 import org.springframework.data.redis.core.ReactiveStringRedisTemplate
@@ -34,6 +35,17 @@ class EmployeesService (
                     .subscribeOn(Schedulers.newSingle("redis"))
                     .subscribe()
             }
+    }
+
+    fun coroutineSelectJoin() : Flux<MutableMap<String, Any>?> {
+        return client
+            .sql("select * from dept_emp " +
+                    "inner join employees on dept_emp.emp_no = employees.emp_no " +
+                    "inner join departments d on dept_emp.dept_no = d.dept_no " +
+                    "where dept_emp.dept_no = :deptNum")
+            .bind("deptNum", "d005")
+            .fetch()
+            .all()
     }
 
     suspend fun coroutineSelect() : Employees? {

@@ -14,4 +14,7 @@ class Employees (
     @Column("last_name") val lastName: String,
     @Column("gender") val gender: Gender,
     @Column("hire_date") val hireDate: LocalDate,
-)
+) {
+    val writeChatting: MutableList<ChattingContent> = mutableListOf()
+    val enteredRoom: MutableList<ChattingRoomParticipants> = mutableListOf()
+}

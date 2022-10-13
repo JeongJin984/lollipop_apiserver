@@ -6,6 +6,6 @@ import org.springframework.data.relational.core.mapping.Table
 
 @Table("departments")
 class Departments(
-    @Id @Column("emp_no") val deptNo : Int,
+    @Id @Column("emp_no") val deptNo : String,
     @Column("dept_name") val deptName : String
 )
