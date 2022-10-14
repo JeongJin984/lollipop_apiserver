@@ -1,6 +1,6 @@
 spring:
   r2dbc:
-    url: r2dbc:pool:mysql://svc-apiserver-db:3306/employees
+    url: r2dbc:pool:mysql://10.98.243.69:3306/employees
     username: root
     password: pass
   sql:
