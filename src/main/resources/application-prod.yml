@@ -2,12 +2,10 @@ spring:
   r2dbc:
     url: r2dbc:pool:mysql://svc-apiserver-db:3306/employees
     username: root
-    password: asdf
+    password: pass
   sql:
     init:
       mode: never
-  redis:
-    port: 6379
   rsocket:
     server:
       port: 7000
